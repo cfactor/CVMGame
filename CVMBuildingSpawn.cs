@@ -4,16 +4,12 @@ using System.Collections;
 public class CVMBuildingSpawn : MonoBehaviour {
 	public Camera PlayCam;
     
-      private Vector2 mousPOS;
+      
 
     void OnMouseDown(){
 		Vector2 rawpos = WPMouseCalc ();
 		Vector2 pos = SnapToGrid (rawpos);
 		Instantiate (CVMPlaceBuilding.selectedBlding, pos, Quaternion.identity);
-        mousPOS = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(Mathf.Round(mousPOS.x), Mathf.Round(mousPOS.y));
-
-        Instantiate(CVMPlaceBuilding.selectedBlding, mousPOS, Quaternion.identity);
     }
 
 	Vector2 SnapToGrid (Vector2 rawWorldPos) {
