@@ -4,8 +4,8 @@ using System.Collections;
 public class CVMTempBuild : MonoBehaviour {
 
 	// Use this for initialization
-
-	public GameObject finalObj;
+	[SerializeField]
+	private GameObject finalObj;
 
 	private Vector2 mousPOS;
 
